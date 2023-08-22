@@ -9,24 +9,18 @@ import java.util.UUID;
 
 @Component
 public class PatientService {
-
-    @Autowired
-    private PatientHelper patientHelper;
-
-    public PatientService(PatientHelper patientHelper){
-        this.patientHelper = patientHelper;
-    }
-    public String newPatient(){
+    public String getNewPatient(){
         UUID uuid = UUID.randomUUID();
         return uuid.toString();
+
     }
-    public List<String> getNewPatient(int quantity){
-        List<String> patients = new ArrayList<>();
-        for(int i = 0; i < quantity; i++){
-            String newPatient = newPatient();
-            patients.add(newPatient);
+    public List<String> getNewPatient(int noOfPatient){
+        List<String> patient = new ArrayList<>();
+        for(int i = 0; i < noOfPatient; i++){
+            String newPatient = getNewPatient();
+            patient.add(newPatient);
         }
-        return patients;
+        return patient;
 
     }
 
