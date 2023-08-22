@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/bootcoding-spring-project.iml" filepath="$PROJECT_DIR$/.idea/bootcoding-spring-project.iml" />
-      <module fileurl="file://$PROJECT_DIR$/coupon-app/coupon-app/coupon-app.iml" filepath="$PROJECT_DIR$/coupon-app/coupon-app/coupon-app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/coupon-app/patient_app/patient_app.iml" filepath="$PROJECT_DIR$/coupon-app/patient_app/patient_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coupon_app/coupon-app.iml" filepath="$PROJECT_DIR$/coupon_app/coupon-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/patient_app/patient_app.iml" filepath="$PROJECT_DIR$/patient_app/patient_app.iml" />
     </modules>
   </component>
 </project>
