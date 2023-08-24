@@ -4,12 +4,13 @@ import com.coupon.application.model.Coupon;
 import com.coupon.application.model.User;
 import com.coupon.application.service.CouponService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/coupon/") // Global Mapping
+@RequestMapping("/api/coupon/") // Global Mapping
 public class CouponController {
     @Autowired
     private CouponService couponService;
@@ -35,11 +36,11 @@ public class CouponController {
     }
 
     // 1. Get All Coupons
-    @GetMapping("all-coupons")
-    public List<String> getAllCoupons(){
-        int quantity = 10;
-        return couponService.getNewCoupon(quantity);
-    }
+//    @GetMapping("all-coupons")
+//    public List<String> getAllCoupons(){
+//        int quantity = 10;
+//        return couponService.getNewCoupon(quantity);
+//    }
 
     // 2. Get Coupon Details by Coupon Id using PathVariable
 //    @GetMapping("coupon-id/{id}")
@@ -48,17 +49,17 @@ public class CouponController {
 //    }
 
     // 2.2 Get Coupon Details by Coupon Id using PathVariable
-    @GetMapping("coupon-id/{id}")
-    public Coupon getCouponObjectById(@PathVariable("id") String couponId){
-        Coupon coupon = couponService.generateNewCoupon();
-        return coupon;
-    }
-
-    @GetMapping("generate/new")
-    public Coupon generateNewCoupon(){
-        Coupon coupon = couponService.generateNewCoupon();
-        return coupon;
-    }
+//    @GetMapping("coupon-id/{id}")
+//    public Coupon getCouponObjectById(@PathVariable("id") String couponId){
+//        Coupon coupon = couponService.generateNewCoupon();
+//        return coupon;
+//    }
+//
+//    @GetMapping("generate/new")
+//    public Coupon generateNewCoupon(){
+//        Coupon coupon = couponService.generateNewCoupon();
+//        return coupon;
+//    }
     // 3. Get Coupons with Filter (Query Parameter)
     @GetMapping("search_coupon")
     public String searchCoupon(
@@ -76,14 +77,14 @@ public class CouponController {
         return "New Coupon : " + couponService.newCoupon();
     }
 
-    @GetMapping("getJson")
-    public Coupon getDummyJson(){
-        System.out.println("/getJson invoked");
-        return Coupon.builder()
-                .id(couponService.newCoupon())
-                .type("Voucher")
-                .validFor(3).build();
-    }
+//    @GetMapping("getJson")
+//    public Coupon getDummyJson(){
+//        System.out.println("/getJson invoked");
+//        return Coupon.builder()
+//                .id(couponService.newCoupon())
+//                .type("Voucher")
+//                .validFor(3).build();
+//    }
 
     @GetMapping("getMultipleCoupons")
     public List<String> newCouponWithQuantity(){
@@ -92,4 +93,9 @@ public class CouponController {
         return couponService.getNewCoupon(quantity);
     }
     // http://localhost:8082/app-name/coupon/getCoupon
+    @PostMapping("/get")
+    public ResponseEntity<List<String>> getCouponDetails() {
+        List<String> couponDetails = couponService.getCoupon();
+        return ResponseEntity.ok(couponDetails);
+    }
 }
