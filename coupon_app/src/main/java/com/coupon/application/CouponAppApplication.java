@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CouponAppApplication implements ApplicationRunner {
+public class CouponAppApplication  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CouponAppApplication.class, args);
@@ -18,9 +18,10 @@ public class CouponAppApplication implements ApplicationRunner {
 	@Autowired
 	private CouponService couponService;
 
-	@Override
-	public void run(ApplicationArguments args) throws Exception{
-		String s = String.valueOf(UserService.generateNewCoupon());
-		System.out.println("New Coupon = "+s);
-	}
+
+//	@Override
+//	public void run(ApplicationArguments args) throws Exception{
+//		String s = String.valueOf(UserService.generateNewCoupon());
+//		System.out.println("New Coupon = "+s);
+//	}
 }
