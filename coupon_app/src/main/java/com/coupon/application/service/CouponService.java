@@ -3,9 +3,13 @@ package com.coupon.application.service;
 import com.coupon.application.helper.CouponHelper;
 import com.coupon.application.model.Coupon;
 import com.coupon.application.model.User;
+import com.coupon.application.repository.CouponRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.annotation.CreatedBy;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -37,8 +41,7 @@ public class CouponService {
 
     public Coupon generateNewCoupon() {
         Coupon coupon = Coupon.builder()
-                .id(UUID.randomUUID().toString())
-                .validFor(5 + new Random().nextInt(90))
+                .couponcode(UUID.randomUUID().toString())
                 .type("COUPON")
                 .build();
         return coupon;
@@ -69,4 +72,16 @@ public class CouponService {
     public List<User> getUsers() {
         return users;
     }
+
+
+    @Autowired
+    private CouponRepository couponRepository;
+
+
+
+
+
+
+
+
 }
