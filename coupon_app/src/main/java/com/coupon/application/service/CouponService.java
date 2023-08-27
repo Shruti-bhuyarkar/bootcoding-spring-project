@@ -41,7 +41,7 @@ public class CouponService {
 
     public Coupon generateNewCoupon() {
         Coupon coupon = Coupon.builder()
-                .couponcode(UUID.randomUUID().toString())
+                .couponCode(UUID.randomUUID().toString())
                 .type("COUPON")
                 .build();
         return coupon;
