@@ -1,27 +1,32 @@
 package com.patientapp.patient_app.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Data;
 
+import java.util.Date;
+
 @Data
 @Builder
+@Table(name = "patient")
 @Entity
 public class Patient {
-    @Column(name = "Patient_name")
+    @Column(name = "Patient_Name")
     private String name;
 
-    @Column(name = "disease")
+    @Column(name = "Disease")
     private String disease;
 
-    @Column(name = "phone")
+    @Column(name = "Phone")
     private int phone;
 
-    @Column(name = "age")
+    @Column(name = "Age")
     private int age;
+
+    @Column(name = "Admission_Date")
+    private Date admissionDate;
+
+
     @Id
     @GeneratedValue
     private int id;
