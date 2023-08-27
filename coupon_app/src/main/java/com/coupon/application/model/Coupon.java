@@ -23,7 +23,7 @@ public class Coupon {
     private String description;
 
     @Column(name = "coupon_code")
-    private  String couponcode;
+    private  String couponCode;
 
    // @Column(name = "discount")
     private int discount;
@@ -32,10 +32,10 @@ public class Coupon {
     private String category;
 
     @Column(name = "created_date")
-    private LocalDate createddate;
+    private Date createdDate;
 
     @Column(name = "validity_date")
-    private LocalDate validitydate;
+    private Date validityDate;
 
    @Column(name = "is_Active")
     private boolean isActive;
