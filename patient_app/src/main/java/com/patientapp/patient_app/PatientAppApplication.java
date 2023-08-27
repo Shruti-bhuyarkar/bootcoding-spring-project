@@ -8,7 +8,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-
 public class PatientAppApplication implements ApplicationRunner {
 
 	public static void main(String[] args) {
@@ -18,10 +17,15 @@ public class PatientAppApplication implements ApplicationRunner {
 	private PatientService patientService;
 
 	@Override
-	public void run(ApplicationArguments args) throws  Exception{
-		String s = patientService.getNewPatient();
-		System.out.println("New Patient = "+ s);
+	public void run(ApplicationArguments args) throws Exception {
+
 	}
+
+//	@Override
+//	public void run(ApplicationArguments args) throws  Exception{
+//		String s = patientService.getNewPatient();
+//		System.out.println("New Patient = "+ s);
+//	}
 
 
 }
