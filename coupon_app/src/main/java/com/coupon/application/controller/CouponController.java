@@ -3,6 +3,7 @@ package com.coupon.application.controller;
 import com.coupon.application.model.Coupon;
 import com.coupon.application.model.User;
 import com.coupon.application.service.CouponService;
+import com.coupon.application.service.NewCouponService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,8 +11,14 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/coupon/") // Global Mapping
+@RequestMapping("/coupon") // Global Mapping
 public class CouponController {
+    @Autowired
+    private NewCouponService newCouponService;
+    @PostMapping("/couponDetails/{value}")
+    public List<Coupon> generateNewCoupon(@PathVariable int value){
+        return newCouponService.generateNewCoupon(value);
+    }
     @Autowired
     private CouponService couponService;
 
@@ -93,9 +100,6 @@ public class CouponController {
         return couponService.getNewCoupon(quantity);
     }
     // http://localhost:8082/app-name/coupon/getCoupon
-    @PostMapping("/get")
-    public ResponseEntity<List<String>> getCouponDetails() {
-        List<String> couponDetails = couponService.getCoupon();
-        return ResponseEntity.ok(couponDetails);
-    }
+
+
 }
