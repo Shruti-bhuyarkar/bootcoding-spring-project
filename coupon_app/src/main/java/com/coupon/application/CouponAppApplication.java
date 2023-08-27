@@ -1,6 +1,7 @@
 package com.coupon.application;
 
 import com.coupon.application.service.CouponService;
+import com.coupon.application.service.NewCouponService;
 import com.coupon.application.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -18,6 +19,8 @@ public class CouponAppApplication  {
 	@Autowired
 	private CouponService couponService;
 
+	@Autowired
+	private NewCouponService newCouponService;
 
 //	@Override
 //	public void run(ApplicationArguments args) throws Exception{
