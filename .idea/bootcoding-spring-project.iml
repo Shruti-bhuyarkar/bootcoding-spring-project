@@ -4,6 +4,7 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/coupon_app/src/main/java/com/coupon/application" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/employee_app" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
