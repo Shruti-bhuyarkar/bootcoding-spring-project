@@ -13,8 +13,6 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-
-
     public static String generateNewCoupon() {
         UUID uuid = UUID.randomUUID();
         return uuid.toString();
