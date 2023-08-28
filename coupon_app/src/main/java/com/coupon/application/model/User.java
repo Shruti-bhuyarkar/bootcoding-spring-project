@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Builder
 @Data
-@Table(name = "app_user")
+@Table(name = "dummy2")
 @Entity
 public class User {
     @Id
