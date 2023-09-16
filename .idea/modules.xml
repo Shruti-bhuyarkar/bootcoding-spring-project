@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/bootcoding-spring-project.iml" filepath="$PROJECT_DIR$/.idea/bootcoding-spring-project.iml" />
       <module fileurl="file://$PROJECT_DIR$/coupon_app/coupon-app.iml" filepath="$PROJECT_DIR$/coupon_app/coupon-app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/employee_app/employee_app.iml" filepath="$PROJECT_DIR$/employee_app/employee_app.iml" />
       <module fileurl="file://$PROJECT_DIR$/patient_app/patient_app.iml" filepath="$PROJECT_DIR$/patient_app/patient_app.iml" />
     </modules>
   </component>
